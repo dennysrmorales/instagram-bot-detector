@@ -1,0 +1,35 @@
+<h1>Instagram Accounts</h1>
+<br>
+<body>
+	<div id="content" *ngFor="let profile of profiles">
+        <div class="container">
+		    <div class="row">
+		        <div class="col-xs-6">
+		            <p>{{profile.full_name }} </p>
+					<p>{{profile.username}}</p>
+					<p>Following: {{profile.edge_followed_by.count}}</p>
+					<p>Followers: {{profile.edge_follow.count}}</p>
+					<p>Posts: {{profile.media.count}}</p>
+
+		        </div>
+
+		        <div class="col-md-7">
+		            <img id="prof_pic" src="{{profile.profile_pic_url}}" onError="this.src='https://vignette.wikia.nocookie.net/the-darkest-minds/images/4/47/Placeholder.png/revision/latest?cb=20160927044640';">
+
+		        </div>
+
+		        <div class="col-xs-2">
+		        	<input type="checkbox" [checked]="profile.isBot" (click)="updateIsBot(profile)">IsBot
+
+		        </div>
+		    </div>
+		</div>
+
+		 <div id="link">
+			<a target="_blank" href="https://instagram.com/{{profile.username}}">Link to Instagram Account</a>   
+        </div> 
+
+	</div>
+
+
+</body>
