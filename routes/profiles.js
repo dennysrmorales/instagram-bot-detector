@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var mongojs = require('mongojs');
-var db = mongojs('localhost:27017/instagramV1', ['test']);
+var db = mongojs('', ['']);
 
 router.get('/profiles', function(req, res, next){
 	db.test.find(function(err, test){
